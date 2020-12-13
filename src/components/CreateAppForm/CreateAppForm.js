@@ -2,6 +2,9 @@ import { Component } from 'react';
 
 import { createApp } from '../../services/appsApi';
 
+// Image preview
+// https://medium.com/@650egor/react-30-day-challenge-day-2-image-upload-preview-2d534f8eaaa
+
 export default class CreateAppForm extends Component {
   state = {
     image: null,

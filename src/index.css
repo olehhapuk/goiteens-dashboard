@@ -8,4 +8,9 @@
 
 html {
   font-family: 'Lato', sans-serif;
+  /* --title-font-size: 39px; */
 }
+
+/* h1 {
+  font-size: var(--title-font-size);
+} */
