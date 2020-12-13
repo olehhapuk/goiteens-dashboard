@@ -4,6 +4,11 @@ const config = {
   baseURL: 'https://goiteens-dashboard.herokuapp.com/api',
 };
 
+// Building full image url
+const image = 'uploads/images/image-1607849906523.jpg';
+const imageUrl = 'https://goiteens-dashboard.herokuapp.com/' + image;
+// --------------
+
 export function fetchAppsByQuery(query, page = 1) {
   return axios({
     ...config,
