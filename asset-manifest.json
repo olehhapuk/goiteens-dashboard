@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/React-project/static/css/main.7115c130.chunk.css",
+    "main.js": "/React-project/static/js/main.309413d8.chunk.js",
+    "main.js.map": "/React-project/static/js/main.309413d8.chunk.js.map",
+    "runtime-main.js": "/React-project/static/js/runtime-main.dad06058.js",
+    "runtime-main.js.map": "/React-project/static/js/runtime-main.dad06058.js.map",
+    "static/js/2.dbda8061.chunk.js": "/React-project/static/js/2.dbda8061.chunk.js",
+    "static/js/2.dbda8061.chunk.js.map": "/React-project/static/js/2.dbda8061.chunk.js.map",
+    "index.html": "/React-project/index.html",
+    "static/css/main.7115c130.chunk.css.map": "/React-project/static/css/main.7115c130.chunk.css.map",
+    "static/js/2.dbda8061.chunk.js.LICENSE.txt": "/React-project/static/js/2.dbda8061.chunk.js.LICENSE.txt",
+    "static/media/about-us-icon.1b922901.svg": "/React-project/static/media/about-us-icon.1b922901.svg",
+    "static/media/dashboard-icon.bf5810e5.svg": "/React-project/static/media/dashboard-icon.bf5810e5.svg",
+    "static/media/logo-icon.d5a5dde1.svg": "/React-project/static/media/logo-icon.d5a5dde1.svg",
+    "static/media/logout-icon.b779f65e.svg": "/React-project/static/media/logout-icon.b779f65e.svg",
+    "static/media/profile-icon.78b51de9.svg": "/React-project/static/media/profile-icon.78b51de9.svg",
+    "static/media/settings-icon.d4cb8a15.svg": "/React-project/static/media/settings-icon.d4cb8a15.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.dad06058.js",
+    "static/js/2.dbda8061.chunk.js",
+    "static/css/main.7115c130.chunk.css",
+    "static/js/main.309413d8.chunk.js"
+  ]
+}
