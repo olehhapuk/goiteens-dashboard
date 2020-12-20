@@ -1,6 +1,7 @@
 import { Component } from 'react';
+import { toast } from 'react-toastify';
 
-import { fetchAppsByQuery } from '../../services/appsApi';
+import { fetchAppDetails, fetchAppsByQuery } from '../../services/appsApi';
 
 import Modal from '../../components/Modal/Modal';
 import EditAppForm from '../../components/EditAppForm/EditAppForm';
@@ -10,11 +11,28 @@ export default class Dashboard extends Component {
     apps: [],
     appId: null,
     editModalVisible: false,
+    query: '',
+    page: 1,
+    appsCount: 0,
   };
 
   componentDidMount() {
-    fetchAppsByQuery('').then((res) => this.setState({ apps: res.rows }));
+    this.fetchApps();
   }
+
+  fetchApps = () => {
+    const { query, page } = this.state;
+
+    fetchAppsByQuery(query, page).then((res) =>
+      this.setState((prevState) => {
+        return {
+          apps: [...prevState.apps, ...res.rows],
+          page: prevState.page + 1,
+          appsCount: res.count,
+        };
+      })
+    );
+  };
 
   openEditForm = (appId) => {
     this.setState({
@@ -31,7 +49,8 @@ export default class Dashboard extends Component {
   };
 
   handleEditApp = (data) => {
-    this.closeEditForm(); // Або сповіщення відображати можна
+    // this.closeEditForm(); // Або сповіщення відображати можна
+    toast.success('App successfully edited');
 
     this.setState((prevState) => {
       return {
@@ -41,7 +60,7 @@ export default class Dashboard extends Component {
   };
 
   render() {
-    const { apps, editModalVisible, appId } = this.state;
+    const { apps, editModalVisible, appId, appsCount } = this.state;
 
     return (
       <div>
@@ -55,12 +74,35 @@ export default class Dashboard extends Component {
         <ul>
           {apps.map((app) => (
             <li key={app.id}>
+              <img
+                src={'https://goiteens-dashboard.herokuapp.com/' + app.image}
+                alt={app.title}
+                width="70"
+                height="70"
+              />
               <button type="button" onClick={() => this.openEditForm(app.id)}>
                 {app.title}
               </button>
             </li>
           ))}
         </ul>
+
+        <br />
+        <hr />
+        <br />
+
+        {/* {apps.length !== appsCount && (
+          <button type="button" onClick={this.fetchApps}>
+            Load more
+          </button>
+        )} */}
+        <button
+          type="button"
+          disabled={apps.length === appsCount}
+          onClick={this.fetchApps}
+        >
+          Load more
+        </button>
       </div>
     );
   }
